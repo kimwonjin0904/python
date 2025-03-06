@@ -48,7 +48,26 @@ print(my_set, type(my_set))
 #각 사용자 입력은 1~45사이 수만
 #조건을 만족 하지 않으면 false, 만족하면 true
 #메세지는 false일대 false인지
+def user_lotto(*args):
+    flag = True
+    msg = "정상 처리"
+    #조건1
+    for b in args:
+        #if 1> v or v> 45:
+        if not(1 <= v <=45):
+            flag = False
+            msg = "1~45사이 값만 가능"
+            return flag, msg,None
+    #조건2
+    if len(args) > 5:
+        msg = "사용자 희망 번호 5개까지만"
+    user_num = list(args)[:5]
+    lotto = set(user_num)
+    while len(lotto) <6:
+        number =random. randint(1, 45)
+        lotto.add(number)
 
+    return flag.msg. sotred(list(lotto))
 
 
 
