@@ -1,0 +1,50 @@
+#문자열 범위 선택 연산자 (97)
+#print("안녕하세요:"[1:4])  #1부터 3까지만 출력이 됨
+#print("안녕하세요:"[0:5])  #0:안 1:녕 2:하 3:세 4:요 // [0:5] -> 0~4까지
+#print("안녕하세요"[-1])    #출력:0
+
+#문자열 길이 구하기(99)
+#len
+#print(len("안녕하세요"))
+
+#더하기 나누기 등 (105)
+#print("5 + 2=", 5+2)  #출력:5 + 2= 7
+#print("5 - 2=", 5-2)
+
+#문자열 복합 대입 연산자(117)
+#string = "안녕하세요"
+#string = string + "!"   # string += "!"
+#print(string)           #출력:안녕하세요!
+
+#input 사용자 입력(118)
+#number = int(input("숫자 입력:"))
+#print(number)
+#str = input("문자입력:")
+#print(str)
+
+#입력 자료형 확인하기(120)
+#string = input("입력:")
+#print(string)
+#print("2x2=",string)
+
+#int 함수 활용하기(121)
+string_a = input("입력A>")
+int_a = int(string_a)
+
+string_b = input("입력B>")
+int_b = int(string_b)
+
+print("문자열 자료:",string_a + string_b)
+print("숫자 자료:", int_a + int_b)
+
+
+
+
+
+
+
+
+
+
+
+
