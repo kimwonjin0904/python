@@ -18,7 +18,7 @@ print(a * 100) #문자열 곱하기 가능
 #4.예약어를 사용할 수 없음(for, ifm while)
 #5.보통 변수는 스네이크 표기법 사용(_)
 my_var = 10
-print(my_var, type(my_var))
+print(my_var,)
 my_var = 10.1
 print(my_var, type(my_var))
 

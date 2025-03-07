@@ -8,6 +8,7 @@ class Rectangle:
         #self 사용 가능
         return self.width * self.height
 
+
     @staticmethod
     def isSquare():
         #단순 기능(self, cls 안됨)
