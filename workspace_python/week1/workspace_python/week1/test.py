@@ -38,11 +38,6 @@
 #print("숫자 자료:", int_a + int_b)
 
 #============================================
-#숫자 입력
-number = input("정수 입력")
 
-if number > 0:
-    print("양수")
 
-if number <0:
-    print(0)
+
