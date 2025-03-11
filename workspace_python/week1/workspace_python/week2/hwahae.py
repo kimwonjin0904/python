@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
 from selenium import webdriver
 import requests
 import time
@@ -14,9 +15,13 @@ def get_paxnset(page):
     print(soup.prettify())
 
     #div = soup.select_one('hwahae-dataset')
-    #div = soup.select_one('slick-list')
     div = soup.select_one('__next')
+    #div = soup.select_one('slick-list')
+    #div = soup.select_one('__NEXT_DATA__')
     lis = div.find_all('li')
+    imgs = driver.find_elements(By.TAG_NAME, 'img')
+    driver.quit()
+    print(imgs)
 
 
     data_rows = []
@@ -30,7 +35,6 @@ def get_paxnset(page):
     with open('paxnet.csv', 'a', encoding='utf-8', newline='') as f:
         write = csv.writer(f, delimiter='|')
         write.writerows(data_rows)
-
 
 if __name__ == '__main__':
     for p in range(1, 11):
