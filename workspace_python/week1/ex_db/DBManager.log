@@ -1,0 +1,9 @@
+2025-03-14 17:28:06,869 - custom_logger - INFO - db 연결됨
+2025-03-14 17:28:06,872 - custom_logger - DEBUG - cnt:1
+2025-03-14 17:28:06,872 - custom_logger - DEBUG - 저장됨 [1, '동수']
+2025-03-14 17:29:12,424 - custom_logger - INFO - db 연결됨
+2025-03-14 17:29:12,425 - custom_logger - DEBUG - cnt:1
+2025-03-14 17:29:12,425 - custom_logger - DEBUG - 저장됨 [1, '동수']
+2025-03-14 17:29:57,204 - custom_logger - INFO - db 연결됨
+2025-03-14 17:29:57,204 - custom_logger - DEBUG - cnt:1
+2025-03-14 17:29:57,204 - custom_logger - DEBUG - 저장됨 [1, '동수']
