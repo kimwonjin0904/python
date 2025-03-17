@@ -10,7 +10,7 @@ def fetch_stock_data():
     conn = db.get_connection()
     try:
         with conn.cursor() as cursor:
-            cursor.execute("SELECT krx_code, krx_name, krx_yn FROM tb_krx")
+            cursor.execute("SELECT krx_code, krx_name, krx_yn FROM tb_krx   ")
             return cursor.fetchall()
     except Exception as e:
         messagebox.showerror("db error", str(e))
