@@ -1,0 +1,59 @@
+<div>Teachable Machine Image Model</div>
+<button type="button" onclick="init()">Start</button>
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+
+    <input type="file" id="my_file" onchange="previewFile()">
+    <img src="" id="my_image" height="300px" alt="">
+    const URL = "./my_model/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+    async function predict() {
+
+        let image=document.getElementById("my_image");
+        let maxPrediction = await model.predict(image);
+        console.log(maxPrediction);
+        for(let i =0; i < maxPredictions; i++){
+            let cla_pred =
+            prediction[i],className+":"+prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = cla_pred
+        }
+    }
+    function previewFile(){
+        let file = document.getElementById("my_file").file[0];
+        let reader = new FileReader();
+        reader.onload = function(){
+            $("#my_image").attr("src",reader.result);
+        }
+        reader.readAsDataURL(file);
+    }
+    $(document).ready(function(){
+        init();
+        $("#my_image").on("load", function(){
+            predict();
+        });
+    });
+</script>
